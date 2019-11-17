@@ -1,0 +1,33 @@
+h3 {
+  text-align: center;
+}
+
+form {
+  padding: 25px;
+  width: 300px;
+  max-width: 80%;
+  margin: 0 auto;
+  background: #efefef;
+  border-radius: 10px;
+  box-shadow: 0 0 5px black;
+}
+
+mat-form-field {
+  width: 100%;
+  display: block;
+  padding-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error-msg {
+  white-space: pre-line;
+  font-size: small;
+  color: maroon;
+  font-style: italic;
+  width: 100%;
+}

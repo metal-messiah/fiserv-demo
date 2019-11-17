@@ -1,0 +1,37 @@
+<h3>Fiserv Demo Form</h3>
+<form [formGroup]="fg">
+  <div class="error-msg" *ngIf="submitted">{{ errorMessage }}</div>
+  <mat-form-field color="primary">
+    <input type="email" matInput formControlName="address" />
+    <mat-error *ngIf="hasError('address')">{{ addressErrorMsg }}</mat-error
+    ><mat-hint>
+      Email Address
+    </mat-hint>
+  </mat-form-field>
+  <mat-form-field color="primary">
+    <input type="password" matInput formControlName="password" />
+    <mat-error *ngIf="hasError('password')">{{ passwordErrorMsg }}</mat-error>
+    <mat-hint>
+      Password
+    </mat-hint>
+  </mat-form-field>
+  <mat-form-field color="primary">
+    <mat-select formControlName="subscription">
+      <mat-option *ngFor="let option of options; let i = index" [value]="option" color="accent">
+        {{ option }}
+      </mat-option>
+    </mat-select>
+    <mat-hint>
+      Subscription
+    </mat-hint>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-mini-fab [matTooltip]="Submit" [color]="getColor()" (click)="submit()">
+      <i class="fas fa-check"></i>
+    </button>
+    <button (click)="reset()" mat-mini-fab [matTooltip]="Clear" color="warn">
+      <i class="fas fa-times-circle"></i>
+    </button>
+  </div>
+</form>
